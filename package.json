@@ -1,0 +1,39 @@
+{
+  "name": "remix-viking-metal-stack",
+  "private": true,
+  "description": "",
+  "license": "",
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn build:css && yarn build:js",
+    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "build:js": "remix build",
+    "dev": "concurrently \"yarn dev:css\" \"yarn dev:js\"",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "dev:js": "remix dev",
+    "start": "remix-serve build"
+  },
+  "dependencies": {
+    "@remix-run/node": "^1.4.3",
+    "@remix-run/react": "^1.4.3",
+    "@remix-run/serve": "^1.4.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.4.3",
+    "@remix-run/eslint-config": "^1.4.3",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^7.1.0",
+    "eslint": "^8.11.0",
+    "postcss": "^8.4.13",
+    "standard": "^17.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "resolutions": {
+    "esbuild": "npm:@odenlang/esbuild@0.14.22"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
